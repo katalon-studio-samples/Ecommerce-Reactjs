@@ -70,7 +70,7 @@ export default class LoginSignin extends Component {
         .catch(error => {
           // console.log('loginsignin error')
           // console.log(error.response)
-          alert(error.response)
+          console.log(error.response.data)
           return error
         })
     }
@@ -81,7 +81,7 @@ export default class LoginSignin extends Component {
           jumpTo('/login')
         })
         .catch(error => {
-          alert(error.response)
+          console.log(error.response.data)
           return error
         })
     }
