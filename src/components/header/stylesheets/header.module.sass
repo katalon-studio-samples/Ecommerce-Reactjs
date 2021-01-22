@@ -10,22 +10,21 @@
   right: 0
   left: 0
   z-index: 3
-  background: rgb(125,125,125)
+  background: $color-primary
 
 .content
   display: flex
-  height: 8vh
+  height: 50px
 
 .left
   display: flex
 
 .logo
-  width: 120px
-  height: 100%
   display: flex
+  font-weight: bold
+  text-transform: uppercase
   justify-content: center
   align-items: center
-  background: pink
   margin: 0 1rem
   font-size: 1.5rem
   &:hover, &:focus
@@ -35,7 +34,7 @@
   display: flex
   margin: auto
   font-size: 1.1rem
-  color: white !important
+  color: $color-tertiary
 
 .right
   display: flex 

@@ -2,9 +2,18 @@
 
 .outbox
   display: flex
+  position: relative
   align-items: center
-  width: 100%
   margin: 0 1rem
+  width: 100%
+  opacity: 0.5
+  border: 1px solid $color-secondary
+  padding-left: 0.5rem
+  padding-right: 0.5rem
+  border-radius: 1em
+  &:hover
+    background-color: $color-secondary
+    cursor: text
 
 .auto
   width: max-content
@@ -22,7 +31,7 @@
     background: transparent
     border: 0
     color: white
-    
+
 @media screen and (max-width: $tablet)
   .outbox
     display: flex
@@ -46,4 +55,8 @@
       padding: 0
       margin: 0
       border: none
+.icon
+  color: $color-tertiary
+  padding-right: 0.5em
 
+  

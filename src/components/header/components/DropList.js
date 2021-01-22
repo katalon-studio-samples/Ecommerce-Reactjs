@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavDropdown } from 'react-bootstrap'
 import jumpTo from '../../../modules/Navigation'
-import '../stylesheets/dropList.css'
+import '../stylesheets/dropList.sass'
 
 export default function DropList({ department, categories,clickCategory }) {
   return (

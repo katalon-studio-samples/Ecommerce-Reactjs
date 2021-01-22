@@ -1,3 +1,5 @@
+@import '../../modules/mediaQuery/app'
+
 .outbox
   display: flex
   flex-direction: column
@@ -10,15 +12,13 @@
     border: none
     outline: none
     background: transparent
-    border-bottom: 1px solid black
     box-shadow: none 
     padding: 0
     height: 2rem
-    caret-color: green
-    cursor: default
+    caret-color: $color-quatenary
   input::placeholder
     padding-left: .5rem
-    color: white !important
+    color: $color-quatenary !important
 .sugges_outbox
   border: 1px solid grey
   min-width: min-content
@@ -45,7 +45,3 @@
   &:hover
     background: rgb(141, 232, 219)
     width: 100%
-    cursor: pointer
-
-
-  

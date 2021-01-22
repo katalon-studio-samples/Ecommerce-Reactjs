@@ -1,20 +1,23 @@
+@import '../../../modules/mediaQuery/app'
+  
 .outbox
   display: flex
   justify-content: flex-end
-  background: rgb(65,65,65)
-  height: 4vh
-  
+  background: $color-quatenary
+  height: 30px
+
 .tag
   padding: 0.5rem
+  width: wrap-content
+  border: null
   white-space: nowrap
-  color: white
-  background: #5E7264
+  color: white !important
   display: flex
   align-items: center
   justify-content: center
   &:hover
     cursor: pointer
-    color: #0056b3
+    color: $color-secondary
 
 .loggout
   display: flex
@@ -23,8 +26,4 @@
   margin-left: 1rem
 
 .login
-  color: white
-  font-size: 1rem
-  &:hover
-    cursor: pointer
-    color: blue
+  color: black

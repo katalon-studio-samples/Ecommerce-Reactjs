@@ -13,7 +13,8 @@ export default function Checkbox({ onChange, name, category, isChecked }) {
       />
       <label htmlFor={name}>
         <div className={styles.checkbox} ></div>
-        {name}
+        <span className={styles.design}></span>
+        <span className={styles.text}>{name}</span>
       </label>
     </div>
   )
