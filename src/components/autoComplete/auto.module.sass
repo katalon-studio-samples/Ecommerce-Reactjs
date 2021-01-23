@@ -16,9 +16,11 @@
     padding: 0
     height: 2rem
     caret-color: $color-quatenary
-  input::placeholder
-    padding-left: .5rem
-    color: $color-quatenary !important
+    &:hover::placeholder
+      color: $color-tertiary
+    &::placeholder
+      padding-left: .5rem
+      color: $color-secondary
 .sugges_outbox
   border: 1px solid grey
   min-width: min-content
@@ -40,11 +42,10 @@
 .sugges_value
   cursor: pointer
   font-size: 1rem
-  color: grey
+  color: $color-tertiary
   padding: 0 2rem
   white-space: nowrap
   width: min-content
   min-width: 100%
   &:hover
-    background: $color-secondary
     width: 100%
