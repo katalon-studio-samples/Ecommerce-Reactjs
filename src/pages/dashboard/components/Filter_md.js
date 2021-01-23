@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from '../stylesheets/filter_md.module.sass'
 import Selection from './Selection'
 import SubSelection from './SubSelection'
-
+import Button from '@material-ui/core/Button'
 export default class Filter_md extends Component {
   constructor(props) {
     super(props);
@@ -23,27 +23,26 @@ export default class Filter_md extends Component {
     return (
       <div className={styles.outbox}>
         <div className={styles.panels}>
-          <div
+          <Button variant='outlined'
             className={`${styles.panel} ${styles.show_panel}`}
             onClick={this.clickShow}
           >
             {this.state.isShow
-              ? <div>Close Filter </div>
+              ? <div>Close Filter</div>
               : <div>Show Filter</div>
             }
-          </div>
-          <div
+          </Button>
+          <Button variant='outlined'
             className={`${styles.panel} ${styles.close_panel}`}
             onClick={this.clickClear}
           >
             Clear Filter
-         </div>
+         </Button>
         </div>
         <div className={`${styles.content} ${this.state.isShow && styles.show_content}`}>
           {/* order */}
           <div className={styles.order_box}>
             <div className={styles.head_title}>
-              <img src="" alt="" />
               <div className={styles.head_title_text}>
                 ORDER
           </div>
@@ -66,7 +65,6 @@ export default class Filter_md extends Component {
           {/* filter */}
           <div className={styles.filter_box}>
             <div className={styles.head_title}>
-              <img src="" alt="" />
               <div className={styles.head_title_text}>
                 FILTER
             </div>

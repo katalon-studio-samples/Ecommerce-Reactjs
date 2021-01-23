@@ -1,9 +1,16 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "../../../modules/mediaQuery/_app";
 
 .card
   min-width: 150px
+  border: none
+  margin: 0
+  cursor: pointer
+  &:hover,
+  &:active
+    box-shadow: 2px 2px 4px $color-tertiary
 
 @include media-breakpoint-down(sm) 
   .title

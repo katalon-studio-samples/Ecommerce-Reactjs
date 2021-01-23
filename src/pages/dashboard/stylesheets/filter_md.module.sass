@@ -6,16 +6,21 @@
 
   .panels
     margin-left: 1rem
-    margin-top: .2rem
+    margin-top: .5rem
     display: flex
 
   .panel
     background: grey
-    margin-right: 1rem
+    margin-right: 0.5rem !important
     border-radius: 8px
     padding: .3rem
     color: white
     cursor: pointer
+    border: 1px solid $color-tertiary !important
+    &:hover,
+    &:active
+      border: 1px solid $color-secondary !important
+      color: $color-secondary !important
   
   .content
     width: 100%

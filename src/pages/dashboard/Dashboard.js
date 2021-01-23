@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import HeaderContainer from '../../components/header/headerContainer'
+import Footer from '../../components/footer/Footer'
 import Product from './components/Product'
 import LoadingAnimation from '../../components/loadingAnimation'
 import Filter from './components/Filter'
@@ -49,6 +50,8 @@ export default class Dashboard extends Component {
             )}
           </div>
         </div>
+        {/* Footer */}
+        <Footer/>
       </div>
     )
   }

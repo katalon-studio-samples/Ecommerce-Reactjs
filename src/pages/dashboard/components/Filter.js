@@ -5,7 +5,7 @@ import generateFilterString from '../utils/generateFilterString'
 import device, { size } from '../../../modules/mediaQuery'
 import MediaQuery from 'react-responsive'
 import Filter_md from './Filter_md'
-
+import Button from '@material-ui/core/Button';
 export default class Filter extends Component {
   constructor(props) {
     super(props)
@@ -120,8 +120,8 @@ export default class Filter extends Component {
                   )}
                 </div>
               </div>
-              <div className={styles.clear_btn} onClick={this.clearAllFilter}>
-                <button>Clear All</button>
+              <div onClick={this.clearAllFilter}>
+                <Button variant="outlined" className={styles.clear_btn}>Clear All</Button>
               </div>
               {/* filter tags */}
               <div className={styles.tags}>
