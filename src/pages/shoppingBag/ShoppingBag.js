@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../components/header/headerContainer'
 import styles from './stylesheets/shoppingBag.module.sass'
-import { Button } from 'react-bootstrap'
+import { Button } from '@material-ui/core'
 import Table from './components/Table'
 import jumpTo from '../../modules/Navigation'
 
@@ -27,11 +27,9 @@ export default function ShoppingBag(props) {
             <div className={styles.total}>
               Total: ${totalPrice}
             </div>
-            <div className="my-3">
-              <Button onClick={() => jumpTo('/checkout')} variant="primary">
+              <Button className={styles.btn_checkout} onClick={() => jumpTo('/checkout')} variant="primary">
                 Checkout
               </Button>
-            </div>
           </div>
         </div>
       </div>
