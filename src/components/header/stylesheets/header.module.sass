@@ -66,6 +66,7 @@
   .toggle_icon
     height: max-content
     margin: .6rem
+    cursor: pointer
     &:hover, &:blur
       .bar1
         transform: rotate(-45deg) translate(-9px, 6px)
@@ -85,7 +86,7 @@
     width: 80vw
     min-width: 120px
     height: 100vh
-    background: rgb(125,125,125)
+    background: $color-primary
     color: white
     z-index: 1000  
     display: flex
@@ -93,7 +94,7 @@
 
   .side_title
     width: 100%
-    background: rgb(65,65,65)
+    background: $color-tertiary
     font-size: 1rem
     padding: .2rem .2rem .2rem .5rem
     display: flex
@@ -113,10 +114,12 @@
     white-space: nowrap
     display: flex
     align-items: center
-    border-bottom: 1px solid rgba(0,0,0,.5)
+    text-transform: uppercase
+    border-bottom: 1px solid $color-quatenary
+    color: $color-quatenary
     &:hover
       cursor: pointer
-      color: #0056b3
+      background-color: $color-secondary
 
   #toggle
     background-color: #FFE600
