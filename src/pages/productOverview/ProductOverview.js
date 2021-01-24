@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import styles from './stylesheets/productOverview.module.sass'
-import { Button } from 'react-bootstrap'
+import Button from '@material-ui/core/Button'
 import Header from '../../components/header/headerContainer'
+import Footer from '../../components/footer/Footer'
 import Variants from './components/Variants'
 import mergeProductAndVariants from './utils/mergeProductAndVariants'
 import jumpTo from '../../modules/Navigation'
+import { faShoppingCart, faUser  } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default class ProductOverview extends Component {
   constructor(props) {
@@ -49,6 +52,7 @@ export default class ProductOverview extends Component {
 
   render() {
     return (
+      <div>
       <div className={styles.outbox}>
         <Header />
         {this.props.product &&
@@ -85,14 +89,19 @@ export default class ProductOverview extends Component {
                     />
                   </div>
                   <div className={styles.btns}>
-                    <Button className={styles.btn} onClick={this.addToBag} variant="outline-primary">Add to Bag</Button>
-                    <Button className={styles.btn} variant="outline-danger">Buy Now</Button>
+                    <Button className={styles.btn_add_to_cart} onClick={this.addToBag} variant="outlined">
+                      <FontAwesomeIcon className={styles.icon} icon={ faShoppingCart }/>
+                      Add to Bag</Button>
+                    <Button className={styles.btn_buy_now} variant="contained">Buy Now</Button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         }
+      </div>
+      {/* Footer */}
+      <Footer className={styles.footer}/>
       </div>
     )
   }
