@@ -3,6 +3,7 @@ import styles from './stylesheets/checkout.module.sass'
 import CheckoutTable from './components/CheckoutTable'
 import Subtotal from './components/Subtotal'
 import Header from '../../components/header/headerContainer'
+import Footer from '../../components/footer/Footer'
 export default class Checkout extends Component {
   constructor(props) {
     super(props)
@@ -22,6 +23,7 @@ export default class Checkout extends Component {
   }
   render() {
     return (
+      <div>
       <div className={styles.outbox}>
         <Header />
         <div className={styles.box}>
@@ -55,6 +57,9 @@ export default class Checkout extends Component {
             </div>
           </div>
         </div>
+      </div>
+      {/*Footer*/}
+      <Footer />
       </div>
     )
   }

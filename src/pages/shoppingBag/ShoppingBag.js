@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../components/header/headerContainer'
+import Footer from '../../components/footer/Footer'
 import styles from './stylesheets/shoppingBag.module.sass'
 import { Button } from '@material-ui/core'
 import Table from './components/Table'
@@ -10,6 +11,7 @@ export default function ShoppingBag(props) {
   const { totalPrice, items } = props.cart
   const { postCart } = props
   return (
+    <div>
     <div className={styles.outbox}>
       <Header />
       <div className={styles.box}>
@@ -33,6 +35,9 @@ export default function ShoppingBag(props) {
           </div>
         </div>
       </div>
+    </div>
+    {/*Footer*/}
+    <Footer />
     </div>
   )
 }
