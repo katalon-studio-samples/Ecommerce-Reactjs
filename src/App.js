@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Router ref={registerNav}>
           <Switch>
-            <Route path="/signin" component={SigninContainer} />
+            <Route path="/signup" component={SigninContainer} />
             <Route path="/login" component={LoginContainer} />
             <Route key="productOverview" path="/product-overview" component={ProductOverview} />,
             {this.props.token && [

@@ -19,7 +19,6 @@ export default function FormInput({
         <input
           type={name.indexOf('assword') > -1 ? 'password' : 'text'}
           name={name}
-          placeholder={name}
           onBlur={(e) => onBlur(e, validate(validations, e.target.value))}
           onFocus={onFocus}
         />

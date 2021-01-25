@@ -21,7 +21,9 @@ export default class CheckoutSuccess extends Component {
   }
 
   render() {
-    const payment = this.props.payment
+    const payment = { card: '123456', payer: { payer_info: { shipping_address: {
+      address: 'Hello'
+    } } } } || this.props.payment;
     return (
       <div className={styles.outbox}>
         <Header />

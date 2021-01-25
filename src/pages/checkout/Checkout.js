@@ -53,7 +53,8 @@ export default class Checkout extends Component {
             }
             {/* button */}
             <div className={styles.btn}>
-              <button><a  href={this.props.url}>Confirm checkout</a></button>
+              {/* <button><a  href={this.props.url}>Confirm checkout</a></button> */}
+              <button><a  href={'/success_page'}>Confirm checkout</a></button>
             </div>
           </div>
         </div>

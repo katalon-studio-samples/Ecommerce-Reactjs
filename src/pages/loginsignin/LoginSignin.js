@@ -117,7 +117,7 @@ export default class LoginSignin extends Component {
             footer_content={
               <div>
                 {this.props.footer_text} <a className={styles.redirect} href={`/${this.props.footer_redirect}`}>
-                  {capitalizeString(this.props.footer_redirect)}
+                  {this.props.footer_redirect === "signup" ? "Sign Up" : capitalizeString(this.props.footer_redirect)}
                 </a>
               </div>
             }
