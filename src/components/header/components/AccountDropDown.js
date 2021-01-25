@@ -35,7 +35,7 @@ export default function AccountDropDown() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={Auth.logout}>Logout</MenuItem>
+        <MenuItem onClick={logout} href="/">Logout</MenuItem>
       </Menu>
     </div>
   );

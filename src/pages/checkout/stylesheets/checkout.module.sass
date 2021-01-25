@@ -25,7 +25,7 @@
   margin: 2em
 
 .title
-  color: blue
+  color: $color-quatenary
   font-size: 2em
   font-family: 'Comfortaa', cursive;
 .sub_title
@@ -43,14 +43,18 @@
   border-bottom: 1px solid black
 .btn
   display: flex
-  justify-content: flex-end
-  margin: 2% 0
+  justify-content: center
+  margin-top: 5%
   button
-    background: white
-    border: 2px groove rgba(0,0,255,0.5)
+    background-color: $color-primary
+    font-weight: bold
+    justify-content: center
+    width: 80%
+    height: 40px
+    border: 1px none
     border-radius: 5px
     &:hover
-      background: rgba(0,0,255,0.3)
+      background-color: $color-secondary
       a
         color: white
     a

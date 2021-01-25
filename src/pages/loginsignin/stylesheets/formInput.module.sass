@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
-  
+@import '../../../modules/mediaQuery/_app'
 .outbox
   display: flex
   flex-direction: column
@@ -9,19 +9,21 @@
 
 .label
   font-family: 'Open Sans', sans-serif
-  font-size: 15px
+  font-weight: bold
   label
     margin: 0
 
 .input
   width: 100%
-  margin-bottom: 3px
+  height: 40px
+  margin-bottom: 30px
   input
     width: 100%
     height: 100%
-    border-radius: 5px
     border: 1px solid grey
     padding: 0 0.5rem
+    &::placeholder
+      color: $color-tertiary
 
 .errMsg
   color: red

@@ -4,8 +4,9 @@ import Base from './components/Base'
 import capitalizeString from './utils/capitalizeString'
 import jumpTo from '../../modules/Navigation'
 import LoadingAnimation from '../../components/loadingAnimation'
-
-
+import loginImage from '../../assets/images/login-image.png'
+import MediaQuery from 'react-responsive'
+import device, { size } from '../../modules/mediaQuery'
 export default class LoginSignin extends Component {
   constructor(props) {
     super(props)
@@ -101,7 +102,11 @@ export default class LoginSignin extends Component {
           {this.props.loading &&
             <LoadingAnimation />
           }
+          <MediaQuery query={device.min.tablet}>
+            <img className={styles.login_image} src={loginImage}></img>
+          </MediaQuery>
           <Base
+            className={styles.login_form}
             title={this.props.title}
             inputs={this.props.INPUT_CONFIG}
             onInputBlur={this.handleBlur}
@@ -111,7 +116,7 @@ export default class LoginSignin extends Component {
             button_title={this.props.title}
             footer_content={
               <div>
-                {this.props.footer_text} <a href={`/${this.props.footer_redirect}`}>
+                {this.props.footer_text} <a className={styles.redirect} href={`/${this.props.footer_redirect}`}>
                   {capitalizeString(this.props.footer_redirect)}
                 </a>
               </div>

@@ -3,6 +3,7 @@ import React from 'react'
 import FormInput from './FormInput'
 import Button from './Button'
 import Footer from './footer'
+import logo from '../../../assets/images/logo.png'
 
 export default function Base({
   title,
@@ -17,9 +18,7 @@ export default function Base({
 }) {
   return (
     <div className={styles.outbox}>
-      <div className={styles.logo}>Zack Market</div>
-      <div className={styles.title_style}>{title}</div>
-      <div className={styles.border_style}></div>
+      <img src={logo} className={styles.logo}></img>
       {
         inputs.map(({ name, validations }) =>
           <FormInput

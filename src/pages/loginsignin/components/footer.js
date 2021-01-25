@@ -2,6 +2,7 @@ import React from 'react'
 
 const style={
   fontSize:'15px',
+  marginTop: '30px',
   marginBottom:'30px'
 }
 

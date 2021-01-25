@@ -23,9 +23,9 @@ export default function FormInput({
           onBlur={(e) => onBlur(e, validate(validations, e.target.value))}
           onFocus={onFocus}
         />
-      </div>
-      <div className={styles.errMsg}>
-        {errorMessage}
+        <div className={styles.errMsg}>
+          {errorMessage}
+        </div>
       </div>
     </div>
   )
