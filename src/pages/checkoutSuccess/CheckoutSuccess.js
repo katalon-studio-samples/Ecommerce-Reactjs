@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import mapSearchURL from './utils/mapSearchURL'
 import jumpTo from '../../modules/Navigation'
 import Header from '../../components/header/headerContainer'
-import checkMark from '../../assets/images/checkmark.svg'
+import checkMark from '../../assets/images/badge-check.png'
 import styles from './stylesheet/checkoutSuccess.module.sass'
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default class CheckoutSuccess extends Component {
   constructor(props) {
     super(props);
