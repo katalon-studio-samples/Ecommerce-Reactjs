@@ -6,7 +6,6 @@ import { Button } from '@material-ui/core'
 import Table from './components/Table'
 import jumpTo from '../../modules/Navigation'
 
-
 export default function ShoppingBag(props) {
   const { totalPrice, items } = props.cart
   const { postCart } = props

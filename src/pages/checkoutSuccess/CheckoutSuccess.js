@@ -28,38 +28,22 @@ export default class CheckoutSuccess extends Component {
               <div className={styles.pic}>
                 <img src={checkMark} alt="" />
               </div>
-              <div className={styles.text}>
-                Thank you for your pruchase!
+                <div className={styles.text}>
+                  Order Successful!
+                </div>
+              <div style={{fontSize: "1.2em"}}>
+                Thank you for your order.
               </div>
             </div>
-            <div className={styles.content}>
-              <div className={styles.info}>
-                <div className={styles.order}>
-                  <div className={styles.title}>
-                    Your order number is: </div>
-                  <div className={styles.num}>
-                    {payment.cart}
-                  </div>
-                </div>
-                <div className={styles.address}>
-                  <div className={styles.title}>
-                    Billing & Shipping information:
-                  </div>
-                  {Object.keys(payment.payer.payer_info.shipping_address).map(p =>
-                    <div key={p}>
-                      {p}: {payment.payer.payer_info.shipping_address[p]}
-                    </div>
-                  )}
-                </div>
-              </div>
               <div className={styles.btn}>
-                <button onClick={() => jumpTo('/dashboard')}> Continue Shopping</button>
+                <button onClick={() => jumpTo('/dashboard')}>
+                  <FontAwesomeIcon icon={ faStepBackward }/>
+                  Back to Home</button>
               </div>
             </div>
-          </div>
         }
       </div>
-    )
+    );
   }
 }
 
