@@ -19,23 +19,20 @@ export default function AccountDropDown() {
   };
 
   const logout = () => {
-    handleClose();
     Auth.logout();
   };
 
   return (
     <div>
-      <Button className={styles.tag} size= 'small' aria-controls="account-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button className={styles.tag} onClick={handleClick}>
         <FontAwesomeIcon icon={ faUser }/>
       </Button>
       <Menu
-        id="account-menu"
         anchorEl={anchorEl}
-        keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={logout} href="/">Logout</MenuItem>
+        <MenuItem onClick={logout} ><a href="/">Logout</a></MenuItem>
       </Menu>
     </div>
   );
