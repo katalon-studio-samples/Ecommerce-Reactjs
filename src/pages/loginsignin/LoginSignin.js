@@ -79,7 +79,7 @@ export default class LoginSignin extends Component {
           return error
         })
     }
-    if (this.props.title === 'Signin') {
+    if (this.props.title === 'SignUp') {
       const { fullname, email, password, verifyPassword } = this.inputText
       this.props.submitAction(fullname, email, password, verifyPassword)
         .then(res => {
@@ -113,7 +113,7 @@ export default class LoginSignin extends Component {
             onInputFocus={this.handleFocus}
             onSubmit={this.handleClick}
             errorMsg={this.state}
-            button_title={this.props.title}
+            button_title={this.props.title === "SignUp" ? "Sign Up" : this.props.title}
             footer_content={
               <div>
                 {this.props.footer_text} <a className={styles.redirect} href={`/${this.props.footer_redirect}`}>

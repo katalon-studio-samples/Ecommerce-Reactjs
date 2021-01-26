@@ -50,6 +50,14 @@ export default class ProductOverview extends Component {
     })
   }
 
+  buyNow = () => {
+    this.props.postCart(
+      this.state.id || this.props.location.pathname.split("/").slice(-1)[0]
+    ).then(res => {
+      jumpTo('/checkout')
+    })
+  }
+
   render() {
     return (
       <div>
@@ -92,7 +100,7 @@ export default class ProductOverview extends Component {
                     <Button className={styles.btn_add_to_cart} onClick={this.addToBag} variant="outlined">
                       <FontAwesomeIcon className={styles.icon} icon={ faShoppingCart }/>
                       Add to Bag</Button>
-                    <Button className={styles.btn_buy_now} variant="contained" onClick={() =>jumpTo('/checkout')}>Buy Now</Button>
+                    <Button className={styles.btn_buy_now} variant="contained" onClick={this.buyNow}>Buy Now</Button>
                   </div>
                 </div>
               </div>

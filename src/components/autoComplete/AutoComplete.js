@@ -18,10 +18,11 @@ export default class AutoComplete extends Component {
       val: input
     })
   }
-  handleFocus = () => {
+  handleFocus = (e) => {
     this.setState({
       isFocus: true
     })
+    this.handleChange(e)
   }
   handleBlur = () => {
     let blurTimer=null

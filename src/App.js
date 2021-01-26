@@ -11,7 +11,6 @@ import ShoppingBagContainer from './pages/shoppingBag/ShoppingBagContainer'
 import CheckoutContainer from './pages/checkout/checkoutContainer'
 import CheckoutSuccessContainer from './pages/checkoutSuccess/CheckoutSuccessContainer'
 import CheckoutCancel from './pages/checkoutCancel/CheckoutCancel'
-
 class App extends Component {
   componentDidMount() {
     this.props.insertToken()
