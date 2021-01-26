@@ -1,25 +1,26 @@
 @import '../../../modules/mediaQuery/app'
 
-  
 .outbox
   display: flex
   margin: auto
-  color: white !important
-
+  color: $color-quatenary
 .lists
   display: flex
   word-break: none  
   white-space: nowrap
 
 .tag
-  padding: 0.8rem
+  padding: 0.5em
+  border-radius: 0.25em
+  text-transform: uppercase
+  font-size: 90%
   white-space: nowrap
   display: flex
   align-items: center
-  // color: #007bff
   &:hover
     cursor: pointer
-    color: #0056b3
+    color: $color-tertiary
+    background: $color-secondary
 
 @media screen and (max-width: $tablet)
   .lists
@@ -33,4 +34,5 @@
     font-size: .8rem
 
   .tag
-    border-bottom: 1px solid rgba(0,0,0,.5)
+    border-bottom: 1px solid $color-quatenary
+    color: $color-quatenary

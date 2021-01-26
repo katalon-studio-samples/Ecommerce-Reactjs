@@ -31,7 +31,7 @@ export default function Menu({
           jumpTo('/dashboard')
         }}
       >
-        All Product
+        All Products
       </div>
     </div>
   )

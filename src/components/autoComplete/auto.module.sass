@@ -1,3 +1,5 @@
+@import '../../modules/mediaQuery/app'
+
 .outbox
   display: flex
   flex-direction: column
@@ -10,15 +12,15 @@
     border: none
     outline: none
     background: transparent
-    border-bottom: 1px solid black
     box-shadow: none 
     padding: 0
     height: 2rem
-    caret-color: green
-    cursor: default
-  input::placeholder
-    padding-left: .5rem
-    color: white !important
+    caret-color: $color-quatenary
+    &:hover::placeholder
+      color: $color-tertiary
+    &::placeholder
+      padding-left: .5rem
+      color: $color-secondary
 .sugges_outbox
   border: 1px solid grey
   min-width: min-content
@@ -28,24 +30,23 @@
 .sugges_box
 
 .sugges_category
+  cursor: pointer
   padding-left: 1rem
   font-size: 1.1rem
   color: white
-  background: rgb(141, 232, 219)
+  text-transform: uppercase
+  background: $color-secondary
 .sugges_arr
   display: flex
   flex-direction: column
 .sugges_value
+  cursor: pointer
   font-size: 1rem
-  color: grey
+  color: $color-tertiary
   padding: 0 2rem
   white-space: nowrap
   width: min-content
   min-width: 100%
   &:hover
-    background: rgb(141, 232, 219)
     width: 100%
-    cursor: pointer
-
-
-  
+    background-color: $color-primary

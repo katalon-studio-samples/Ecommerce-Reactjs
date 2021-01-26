@@ -46,18 +46,18 @@ export default function BagTable({ items, handleClick }) {
                   <Button
                     variant="outline-secondary"
                     className={styles.btn}
-                    onClick={() => handleClick(id, true, false)}
-                  >
-                    +
-                </Button>
-                  {items[id].qty}
-                  <Button
-                    variant="outline-secondary"
-                    className={styles.btn}
                     onClick={() => handleClick(id, false, true)}
                   >
                     -
-                 </Button>
+                  </Button>
+                    {items[id].qty}
+                    <Button
+                      variant="outline-secondary"
+                      className={styles.btn}
+                      onClick={() => handleClick(id, true, false)}
+                    >
+                      +
+                  </Button>
                 </div>
               </td>
               {/* price */}

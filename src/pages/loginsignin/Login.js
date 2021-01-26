@@ -27,7 +27,7 @@ export default function Login({ postToken, login_loading, login_error }) {
         INPUT_CONFIG={INPUT_CONFIG}
         title="Login"
         footer_text="Don't you have an account?"
-        footer_redirect="signin"
+        footer_redirect="signup"
         submitAction={postToken}
         loading={login_loading}
         login_error={login_error}

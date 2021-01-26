@@ -11,7 +11,6 @@ import ShoppingBagContainer from './pages/shoppingBag/ShoppingBagContainer'
 import CheckoutContainer from './pages/checkout/checkoutContainer'
 import CheckoutSuccessContainer from './pages/checkoutSuccess/CheckoutSuccessContainer'
 import CheckoutCancel from './pages/checkoutCancel/CheckoutCancel'
-
 class App extends Component {
   componentDidMount() {
     this.props.insertToken()
@@ -21,7 +20,7 @@ class App extends Component {
       <div>
         <Router ref={registerNav}>
           <Switch>
-            <Route path="/signin" component={SigninContainer} />
+            <Route path="/signup" component={SigninContainer} />
             <Route path="/login" component={LoginContainer} />
             <Route key="productOverview" path="/product-overview" component={ProductOverview} />,
             {this.props.token && [

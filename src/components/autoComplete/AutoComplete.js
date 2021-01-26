@@ -18,10 +18,11 @@ export default class AutoComplete extends Component {
       val: input
     })
   }
-  handleFocus = () => {
+  handleFocus = (e) => {
     this.setState({
       isFocus: true
     })
+    this.handleChange(e)
   }
   handleBlur = () => {
     let blurTimer=null
@@ -49,7 +50,7 @@ export default class AutoComplete extends Component {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           value={this.state.val}
-          placeholder="Search"
+          placeholder="Search..."
         />
         <div className={styles.sugges_outbox}>
           {

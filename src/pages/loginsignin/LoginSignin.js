@@ -4,8 +4,9 @@ import Base from './components/Base'
 import capitalizeString from './utils/capitalizeString'
 import jumpTo from '../../modules/Navigation'
 import LoadingAnimation from '../../components/loadingAnimation'
-
-
+import loginImage from '../../assets/images/login-image.png'
+import MediaQuery from 'react-responsive'
+import device, { size } from '../../modules/mediaQuery'
 export default class LoginSignin extends Component {
   constructor(props) {
     super(props)
@@ -78,7 +79,7 @@ export default class LoginSignin extends Component {
           return error
         })
     }
-    if (this.props.title === 'Signin') {
+    if (this.props.title === 'SignUp') {
       const { fullname, email, password, verifyPassword } = this.inputText
       this.props.submitAction(fullname, email, password, verifyPassword)
         .then(res => {
@@ -101,18 +102,22 @@ export default class LoginSignin extends Component {
           {this.props.loading &&
             <LoadingAnimation />
           }
+          <MediaQuery query={device.min.tablet}>
+            <img className={styles.login_image} src={loginImage}></img>
+          </MediaQuery>
           <Base
+            className={styles.login_form}
             title={this.props.title}
             inputs={this.props.INPUT_CONFIG}
             onInputBlur={this.handleBlur}
             onInputFocus={this.handleFocus}
             onSubmit={this.handleClick}
             errorMsg={this.state}
-            button_title={this.props.title}
+            button_title={this.props.title === "SignUp" ? "Sign Up" : this.props.title}
             footer_content={
               <div>
-                {this.props.footer_text} <a href={`/${this.props.footer_redirect}`}>
-                  {capitalizeString(this.props.footer_redirect)}
+                {this.props.footer_text} <a className={styles.redirect} href={`/${this.props.footer_redirect}`}>
+                  {this.props.footer_redirect === "signup" ? "Sign Up" : capitalizeString(this.props.footer_redirect)}
                 </a>
               </div>
             }

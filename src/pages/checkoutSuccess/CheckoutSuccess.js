@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import mapSearchURL from './utils/mapSearchURL'
 import jumpTo from '../../modules/Navigation'
 import Header from '../../components/header/headerContainer'
-import checkMark from '../../assets/images/checkmark.svg'
+import checkMark from '../../assets/images/badge-check.png'
 import styles from './stylesheet/checkoutSuccess.module.sass'
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default class CheckoutSuccess extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +21,9 @@ export default class CheckoutSuccess extends Component {
   }
 
   render() {
-    const payment = this.props.payment
+    const payment = { card: '123456', payer: { payer_info: { shipping_address: {
+      address: 'Hello'
+    } } } } || this.props.payment;
     return (
       <div className={styles.outbox}>
         <Header />
@@ -28,38 +33,22 @@ export default class CheckoutSuccess extends Component {
               <div className={styles.pic}>
                 <img src={checkMark} alt="" />
               </div>
-              <div className={styles.text}>
-                Thank you for your pruchase!
+                <div className={styles.text}>
+                  Order Successful!
+                </div>
+              <div style={{fontSize: "1.2em"}}>
+                Thank you for your order.
               </div>
             </div>
-            <div className={styles.content}>
-              <div className={styles.info}>
-                <div className={styles.order}>
-                  <div className={styles.title}>
-                    Your order number is: </div>
-                  <div className={styles.num}>
-                    {payment.cart}
-                  </div>
-                </div>
-                <div className={styles.address}>
-                  <div className={styles.title}>
-                    Billing & Shipping information:
-                  </div>
-                  {Object.keys(payment.payer.payer_info.shipping_address).map(p =>
-                    <div key={p}>
-                      {p}: {payment.payer.payer_info.shipping_address[p]}
-                    </div>
-                  )}
-                </div>
-              </div>
               <div className={styles.btn}>
-                <button onClick={() => jumpTo('/dashboard')}> Continue Shopping</button>
+                <button onClick={() => jumpTo('/dashboard')}>
+                  <FontAwesomeIcon icon={ faStepBackward }/>
+                  Back to Home</button>
               </div>
             </div>
-          </div>
         }
       </div>
-    )
+    );
   }
 }
 
