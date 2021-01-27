@@ -33,7 +33,7 @@ export default class Filter extends Component {
       //add category value to array
       if (isChecked) {
         //user can only select one order
-        if (category === 'order') {
+        if (category === 'order' || category === 'price') {
           return {
             [category]: [tagName]
           }

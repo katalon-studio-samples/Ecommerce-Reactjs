@@ -4,6 +4,7 @@ import CheckoutTable from './components/CheckoutTable'
 import Subtotal from './components/Subtotal'
 import Header from '../../components/header/headerContainer'
 import Footer from '../../components/footer/Footer'
+import jumpTo from '../../modules/Navigation'
 export default class Checkout extends Component {
   constructor(props) {
     super(props)
@@ -54,7 +55,9 @@ export default class Checkout extends Component {
             {/* button */}
             <div className={styles.btn}>
               {/* <button><a  href={this.props.url}>Confirm checkout</a></button> */}
-              <button><a  href={'/success_page'}>Confirm checkout</a></button>
+              <button onClick={() => jumpTo('/success_page')} disabled={this.props.cart.items === undefined || this.props.cart.items.length == 0}>
+                Confirm checkout
+              </button>
             </div>
           </div>
         </div>

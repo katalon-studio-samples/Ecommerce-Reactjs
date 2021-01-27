@@ -4,7 +4,7 @@ import jumpTo from '../../modules/Navigation'
 import Header from '../../components/header/headerContainer'
 import checkMark from '../../assets/images/badge-check.png'
 import styles from './stylesheet/checkoutSuccess.module.sass'
-import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class CheckoutSuccess extends Component {
@@ -42,8 +42,9 @@ export default class CheckoutSuccess extends Component {
             </div>
               <div className={styles.btn}>
                 <button onClick={() => jumpTo('/dashboard')}>
-                  <FontAwesomeIcon icon={ faStepBackward }/>
-                  Back to Home</button>
+                  <FontAwesomeIcon style={{marginRight: '5px'}} icon={ faArrowLeft }/>
+                  Back to Home
+                </button>
               </div>
             </div>
         }

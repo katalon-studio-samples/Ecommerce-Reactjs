@@ -4,7 +4,7 @@ import styles from '../stylesheets/table.module.sass'
 export default function CheckoutTable({ items }) {
   return (
     <div className={styles.outbox}>
-      {Object.keys(items).map(i =>
+      {items !== undefined ? Object.keys(items).map(i =>
         <div key={i} className={styles.row}>
           <div className={styles.pic}>
             <img src={items[i].item.imagePath} alt="" />
@@ -16,7 +16,7 @@ export default function CheckoutTable({ items }) {
             ${items[i].item.price} X {items[i].qty}
           </div>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }
