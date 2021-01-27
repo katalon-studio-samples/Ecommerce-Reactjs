@@ -1,6 +1,6 @@
 import serverCall from '../../modules/serverCall'
 
-export const filter=(text)=>dispatch=>{
+export const filter = (text) => dispatch => {
   dispatch({
     type:FILTER_BEGIN,
   })
