@@ -4,6 +4,8 @@ import CheckoutTable from './components/CheckoutTable'
 import Subtotal from './components/Subtotal'
 import Header from '../../components/header/headerContainer'
 import Footer from '../../components/footer/Footer'
+import jumpTo from '../../modules/Navigation'
+import { Button } from '@material-ui/core'
 export default class Checkout extends Component {
   constructor(props) {
     super(props)
@@ -30,7 +32,7 @@ export default class Checkout extends Component {
           <div className={styles.content}>
             {/* title */}
             <div className={styles.title}>
-              Checkout
+              Shopping Bag
             <div className={styles.sub_title}>
                 Hi <b>{this.props.name}</b> Please review your items and press the confirm checkout button. You will enter your address information while your paying on PayPal
               </div>
@@ -54,7 +56,9 @@ export default class Checkout extends Component {
             {/* button */}
             <div className={styles.btn}>
               {/* <button><a  href={this.props.url}>Confirm checkout</a></button> */}
-              <button><a  href={'/success_page'}>Confirm checkout</a></button>
+              <Button onClick={() => jumpTo('/success_page')} disabled={this.props.cart.items === undefined || this.props.cart.items.length == 0}>
+                Confirm checkout
+              </Button>
             </div>
           </div>
         </div>

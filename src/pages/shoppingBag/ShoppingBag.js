@@ -28,7 +28,7 @@ export default function ShoppingBag(props) {
             <div className={styles.total}>
               Total: ${totalPrice}
             </div>
-              <Button className={styles.btn_checkout} onClick={() => jumpTo('/checkout')} variant="primary">
+              <Button className={styles.btn_checkout} onClick={() => jumpTo('/checkout')} variant="primary" disabled={items === undefined || items.length == 0}>
                 Checkout
               </Button>
           </div>

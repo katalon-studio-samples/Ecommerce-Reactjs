@@ -11,7 +11,7 @@ export default class AutoComplete extends Component {
   handleChange = (e) => {
     const input = e.target.value
     this.props.filter(input)
-    if(this.props.onChange){
+    if (this.props.onChange) {
       this.props.onChange(input)
     }
     this.setState({
@@ -33,15 +33,18 @@ export default class AutoComplete extends Component {
     }, 100);
   }
   handleClick = (v) => {
-    if(this.props.suggest_value){
+    if (this.props.suggest_value) {
       this.props.suggest_value(v)
     }
     this.setState({
       val: v
+    }, () => {
+      this.props.search(v)
     })
   }
   render() {
-    const r = this.props.filter_result
+    const r = this.props.filter_result;
+
     return (
       <div className={styles.outbox} style={this.props.style}>
         <input

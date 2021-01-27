@@ -1,6 +1,6 @@
 import serverCall from '../../modules/serverCall'
 
-export const getAllProducts=()=>dispatch=>{
+export const getAllProducts = () => dispatch =>{
   dispatch({
     type:GET_ALL_PRODUCTS_BEGIN,
   })
@@ -72,7 +72,7 @@ export const getProductsByCategory=(c)=>dispatch=>{
   })
 }
 
-export const search=(text)=>dispatch=>{
+export const search = (text) => dispatch => {
   dispatch({
     type:SEARCH_BEGIN,
   })
