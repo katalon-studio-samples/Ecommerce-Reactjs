@@ -15,7 +15,7 @@ export default function UserHeader({ user_token }) {
         <AccountDropDown/>
         : 
         <div className={styles.loggout}>
-          <div className={styles.tag} onClick={() => jumpTo('/login')}>
+          <div className={styles.tag} onClick={() => jumpTo('/signin')}>
             <FontAwesomeIcon icon={ faUser }/>
         </div>
         </div>

@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import token from './tokenReducer'
-import signin from './signinReducer'
+import signup from './signupReducer'
 import department from './departmentReducer'
 import product from './productReducer'
 import variant from './variantsReducer'
@@ -10,7 +10,7 @@ import filter from './filterReducer'
 
 export default combineReducers({
   token,
-  signin,
+  signup,
   department,
   product,
   variant,

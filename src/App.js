@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { connect } from 'react-redux'
 import { registerNav } from './modules/Navigation'
 import { insertToken } from './redux/action/tokenAction'
-import LoginContainer from './pages/loginsignin/LoginContainer'
 import SigninContainer from './pages/loginsignin/SigninContainer'
+import SignupContainer from './pages/loginsignin/SignupContainer'
 import DashboardContainer from './pages/dashboard/DashboardContainer'
 import ProductOverview from './pages/productOverview/ProductOverviewContainer'
 import ShoppingBagContainer from './pages/shoppingBag/ShoppingBagContainer'
@@ -20,8 +20,8 @@ class App extends Component {
       <div>
         <Router ref={registerNav}>
           <Switch>
-            <Route path="/signup" component={SigninContainer} />
-            <Route path="/login" component={LoginContainer} />
+            <Route path="/signup" component={SignupContainer} />
+            <Route path="/signin" component={SigninContainer} />
             <Route key="productOverview" path="/product-overview" component={ProductOverview} />,
             {this.props.token && [
               <Route key="ShoppingBagContainer" path="/bag" component={ShoppingBagContainer} />,
@@ -31,7 +31,7 @@ class App extends Component {
             ]}
             <Route key="dashboard" path="/dashboard" component={DashboardContainer} />,
             <Route exact path="/" component={DashboardContainer} />
-            <Redirect to='/login' />
+            <Redirect to='/signin' />
           </Switch>
         </Router>
       </div>

@@ -59,7 +59,7 @@ export default class LoginSignin extends Component {
       console.log('valid fail');
       return
     }
-    if (this.props.title === 'Login') {
+    if (this.props.title === 'Signin') {
       const { email, password } = this.inputText
       this.props.submitAction(email, password)
         .then(res => {
@@ -79,11 +79,11 @@ export default class LoginSignin extends Component {
           return error
         })
     }
-    if (this.props.title === 'SignUp') {
+    if (this.props.title === 'Signup') {
       const { fullname, email, password, verifyPassword } = this.inputText
       this.props.submitAction(fullname, email, password, verifyPassword)
         .then(res => {
-          jumpTo('/login')
+          jumpTo('/signin')
         })
         .catch(error => {
           if (error.response.data.error) {
@@ -113,11 +113,11 @@ export default class LoginSignin extends Component {
             onInputFocus={this.handleFocus}
             onSubmit={this.handleClick}
             errorMsg={this.state}
-            button_title={this.props.title === "SignUp" ? "Sign Up" : this.props.title}
+            button_title={this.props.title === "Signup" ? "Sign Up" : "Sign In"}
             footer_content={
               <div>
                 {this.props.footer_text} <a className={styles.redirect} href={`/${this.props.footer_redirect}`}>
-                  {this.props.footer_redirect === "signup" ? "Sign Up" : capitalizeString(this.props.footer_redirect)}
+                  {this.props.footer_redirect === "signup" ? "Sign Up" : "Sign In"}
                 </a>
               </div>
             }

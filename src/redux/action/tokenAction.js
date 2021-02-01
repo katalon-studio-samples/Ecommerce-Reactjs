@@ -1,10 +1,10 @@
-import { login } from '../../modules/serverCall'
+import { signin } from '../../modules/serverCall'
 
 export const postToken = (email, password) => dispatch => {
   dispatch({
     type: POST_TOKEN_BEGIN
   })
-  return login(email, password)
+  return signin(email, password)
     .then(res => {
       dispatch({
         type: POST_TOKEN_SUCCESS,

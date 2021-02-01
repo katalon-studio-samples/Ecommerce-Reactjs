@@ -29,7 +29,7 @@ const serverCall = (config) => {
       }
       if(error.response.status===401){
         Auth.logout()
-        jumpTo('/login')
+        jumpTo('/signin')
         throw error
       }
       return Promise.reject(error);
@@ -39,7 +39,7 @@ const serverCall = (config) => {
 }
 export default serverCall
 
-export const login = (email, password) => {
+export const signin = (email, password) => {
   const body =
   {
     "credential": {

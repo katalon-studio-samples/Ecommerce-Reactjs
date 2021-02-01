@@ -1,30 +1,30 @@
 import {
-  POST_SIGNIN_BEGIN,
-  POST_SIGNIN_SUCCESS,
-  POST_SIGNIN_FAIL
-} from '../action/signinAction'
+  POST_SIGNUP_BEGIN,
+  POST_SIGNUP_SUCCESS,
+  POST_SIGNUP_FAIL
+} from '../action/signupAction'
 
 const initialState = {
-  signin_loading: false,
+  signup_loading: false,
   error: {},
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case POST_SIGNIN_BEGIN:
+    case POST_SIGNUP_BEGIN:
       return {
         ...state,
-        signin_loading: true
+        signup_loading: true
       }
-    case POST_SIGNIN_SUCCESS:
+    case POST_SIGNUP_SUCCESS:
       return {
         ...state,
-        signin_loading: false,
+        signup_loading: false,
       }
-    case POST_SIGNIN_FAIL:
+    case POST_SIGNUP_FAIL:
       return {
         ...state,
-        signin_loading: false,
+        signup_loading: false,
         error: action.payload.error.response.data
       }
     default:

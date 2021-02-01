@@ -132,15 +132,15 @@ export default class Header extends Component {
                   </div>
                   <div
                     className={styles.side_content}
-                    onClick={() => jumpTo('/login')}
+                    onClick={() => jumpTo('/signin')}
                   >
-                    Login
+                    Sign In
                   </div>
                   <div
                     className={styles.side_content}
                     onClick={() => { Auth.logout(); go('/dashboard') }}
                   >
-                    Logout
+                    Log out
                   </div>
                 </div>
               </div>
