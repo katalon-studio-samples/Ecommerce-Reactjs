@@ -20,10 +20,11 @@ export default function Base({
     <div className={styles.outbox}>
       <img src={logo} className={styles.logo}></img>
       {
-        inputs.map(({ name, validations }) =>
+        inputs.map(({ name, displayName, validations }) =>
           <FormInput
             key={name}
             name={name}
+            displayName={displayName}
             validations={validations}
             errorMessage={errorMsg[name].errorMsg}
             onChange={onInputChange}

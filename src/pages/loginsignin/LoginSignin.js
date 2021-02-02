@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styles from './stylesheets/loginsignin.module.sass'
 import Base from './components/Base'
-import capitalizeString from './utils/capitalizeString'
 import jumpTo from '../../modules/Navigation'
 import LoadingAnimation from '../../components/loadingAnimation'
 import loginImage from '../../assets/images/login-image.png'

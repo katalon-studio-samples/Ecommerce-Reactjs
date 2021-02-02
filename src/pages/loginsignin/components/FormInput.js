@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from '../stylesheets/formInput.module.sass'
-import capitalizeString from '../utils/capitalizeString'
-
 
 export default function FormInput({
   name,
+  displayName,
   validations,
   errorMessage,
   onBlur,
@@ -13,7 +12,7 @@ export default function FormInput({
   return (
     <div className={styles.outbox}>
       <div className={styles.label}>
-        <label htmlFor={name}>{capitalizeString(name)}</label>
+        <label htmlFor={name}>{displayName}</label>
       </div>
       <div className={styles.input}>
         <input
