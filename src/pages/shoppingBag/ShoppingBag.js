@@ -22,9 +22,11 @@ export default function ShoppingBag(props) {
             </div>
             <img src={emptyBag} alt="" />
             <div className={styles.process_box}>
-                <Button className={styles.btn_checkout} onClick={() => jumpTo('/dashboard')} variant="primary">
+              <div className={styles.btn_checkout}>
+                <Button onClick={() => jumpTo('/dashboard')} variant="primary">
                   Shopping more
                 </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -49,14 +51,14 @@ export default function ShoppingBag(props) {
               handleClick={(pid, increase, decrease) => postCart(pid, increase, decrease)}
             />
           </div>
-          <div className={styles.process_box}>
             <div className={styles.total}>
               Total: ${totalPrice}
             </div>
-              <Button className={styles.btn_checkout} onClick={() => jumpTo('/checkout')} variant="primary">
+            <div className={styles.btn_checkout}>
+              <Button onClick={() => jumpTo('/checkout')} variant="primary">
                 Checkout
               </Button>
-          </div>
+            </div>
         </div>
       </div>
     </div>
