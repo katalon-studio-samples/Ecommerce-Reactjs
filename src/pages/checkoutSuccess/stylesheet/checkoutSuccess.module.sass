@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
-@import '../../../modules/mediaQuery/_app'
+@import '../../../modules/mediaQuery/app'
   
 .outbox
   margin-top: 80px
@@ -22,18 +22,33 @@
     height: 100px
     img
       width: 100%
-      height: 100%
-  .text
-    font-size: 2rem
-    font-weight: bold
-    font-family: 'Comfortaa', cursive
-    text-align: center
+    height: 100%
+
+.text
+  font: 3rem sans-serif
+  font-weight: bold
+  text-align: center
+  position: relative
+  z-index: 1
+  margin-top: 0.5em
+  margin-bottom: 10px
+  &:before
+    border-top: 0.5em solid $color-primary
+    content: ""
+    margin: 0
+    position: absolute
+    top: 60%
+    left: -2.5%
+    right: 0
+    bottom: 0
+    width: 105%
+    z-index: -1
 
 .btn
   display: flex
   justify-content: flex-end
   font-family: 'Comfortaa', cursive
-  margin-top: 50px
+  margin-top: 3em
   button
     background: white
     letter-spacing: 2px
@@ -46,3 +61,8 @@
     &:hover,
     &:active
       color: $color-quatenary
+
+
+@media screen and (max-width: $tablet)
+  .text
+    font-size: 1.5em

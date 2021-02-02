@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class CheckoutSuccess extends Component {
   constructor(props) {
     super(props);
-
   }
   componentDidMount() {
     const UrlQuery = this.props.location.search
@@ -36,7 +35,7 @@ export default class CheckoutSuccess extends Component {
                 <div className={styles.text}>
                   Order Successful!
                 </div>
-              <div style={{fontSize: "1.2em"}}>
+              <div style={{fontSize: "1.2em", fontWeight: "bold"}}>
                 Thank you for your order.
               </div>
             </div>
