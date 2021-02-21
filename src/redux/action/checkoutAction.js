@@ -1,4 +1,5 @@
 import serverCall, { getPaypalToken } from '../../modules/serverCall'
+import Auth from '../../modules/Auth';
 
 export const getCheckoutUrl = (cartId) => dispatch => {
   dispatch({
@@ -24,39 +25,22 @@ export const getCheckoutUrl = (cartId) => dispatch => {
     })
 }
 
-export const getPayment = (paymentId, PayerID) => dispatch => {
+export const getPayment = () => dispatch => {
+  let userId = Auth.getUserId()
   dispatch({
     type: GET_PAYMENT_BEGIN,
   })
-  return getPaypalToken()
-    .then(response => {
-      return serverCall({
-        method: 'GET',
-        url: `/payment/success?paymentId=${paymentId}&PayerID=${PayerID}`,
-        headers: { 'Authorization': `Bearer ${response.data.access_token}` }
-      })
-        .then(res => {
-          dispatch({
-            type: GET_PAYMENT_SUCCESS,
-            payload: res
-          })
-          return res
-        })
-        .catch(error => {
-          dispatch({
-            type: GET_PAYMENT_FAIL,
-            payload: { error }
-          })
-          return error
-        })
+  serverCall({
+    method: 'DELETE',
+    url: `users/${userId}/cart`
+  })
+  .catch(error => {
+    dispatch({
+      type: GET_PAYMENT_FAIL,
+      payload: { error }
     })
-    .catch(error => {
-      dispatch({
-        type: GET_PAYMENT_FAIL,
-        payload: { error }
-      })
-      return error
-    })
+    return error
+  })
 }
 
 

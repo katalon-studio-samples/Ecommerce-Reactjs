@@ -10,7 +10,7 @@ import emptyBag from '../../assets/images/emptyCart.svg'
 export default function ShoppingBag(props) {
   const { totalPrice, items } = props.cart
   const { postCart } = props
-  if (items === undefined || items.length == 0) {
+  if (items === undefined || items === null ||items.length == 0) {
     return (
     <div>
       <div className={styles.outbox}>
