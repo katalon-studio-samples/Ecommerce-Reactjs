@@ -1,52 +1,38 @@
 @import '../../modules/mediaQuery/app'
 
-.outbox
-  display: flex
-  flex-direction: column
-  align-items: flex-start
-  z-index: 3
-  position: relative
-  input
-    // border: 1px solid grey 
-    border: none
-    outline: none
-    width: 278px
-    background: transparent
-    box-shadow: none
-    padding: 0
-    height: 2rem
-    caret-color: $color-quatenary
-    &:hover::placeholder
-      color: $color-tertiary
-    &::placeholder
-      padding-left: .5rem
-      color: $color-secondary
-.sugges_outbox
-  border: 1px solid grey
-  min-width: min-content
-  background: white
+.container
+  background-color: transparent
+  color: $color-quatenary
+  width: 278px
+  &:hover, &:focus
+    background-color: $color-secondary
+
+.input
+  background-color: transparent
+  border: none
+  outline: none
+
+.suggestionsContainer
+  background-color: white
+  display: block
   position: absolute
   top: 2rem
-.sugges_box
+  width: 278px
+  border-bottom-left-radius: 4px
+  border-bottom-right-radius: 4px
+  z-index: 2
 
-.sugges_category
-  cursor: pointer
-  padding-left: 1rem
-  font-size: 1.1rem
-  color: white
-  text-transform: uppercase
-  background: $color-secondary
-.sugges_arr
-  display: flex
-  flex-direction: column
-.sugges_value
-  cursor: pointer
-  font-size: 1rem
-  color: $color-tertiary
-  padding: 0 2rem
-  white-space: nowrap
-  width: min-content
-  min-width: 100%
-  &:hover
-    width: 100%
-    background-color: $color-primary
+.suggestionsList
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+.suggestion
+  padding: 10px 20px
+
+.suggestionHighlighted 
+  background-color: $color-secondary
+
+.sectionTitle
+  background-color: $color-primary
+  padding: 5px 5px
