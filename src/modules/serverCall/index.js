@@ -5,7 +5,7 @@ import qs from 'qs'
 import paypalConfig from '../../configs/paypalConfig'
 
 // const URL = 'https://zack-ecommerce-nodejs.herokuapp.com'
-const URL = 'http://54.225.144.144:4000'
+const URL = 'https://54.225.144.144:4000'
 
 const serverCall = (config) => {
   //header authorization
@@ -49,7 +49,7 @@ export const signin = (email, password) => {
   }
   return serverCall({
     method: 'POST',
-    url: '/users/login',
+    url: '/users/signin',
     data: body
   })
     .then(res => {

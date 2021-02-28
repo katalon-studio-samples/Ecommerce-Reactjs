@@ -6,7 +6,7 @@ export const signup=(fullname,email,password,verifyPassword)=>dispatch=>{
   })
   return serverCall({
     method:'POST',
-    url:'/users/signin',
+    url:'/users/signup',
     data:{
       fullname,email,password,verifyPassword
     }
